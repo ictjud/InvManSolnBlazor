@@ -1,0 +1,15 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Application.DTO.Request.Identity
+{
+    public class LoginUserRequestDTO
+    {
+        [EmailAddress]
+        [RegularExpression("[*@ \\t\\r\\n]+@[^@ \\t\\r\\n]+\\.[e \\t\\r\\n]+", ErrorMessage = "Your Email is not valid")]
+        public string Email { get; set; }
+        [Required]
+        [RegularExpression("^] ?=.*? [A-Z])( ?=.*? [a-z])( ?=.*? [0-9])( ?=.*? [# ?! 0$%*s *- ]).{8,}$", ErrorMessage = "Your password is Inapropriate")]
+        [MinLength(8), MaxLength(100)]
+        public string Password { get; set; }
+    }
+}
