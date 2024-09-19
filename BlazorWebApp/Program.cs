@@ -1,6 +1,9 @@
 using BlazorWebApp.Components;
+using Infrastructure.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddInfrastructureSevice(builder.Configuration);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
