@@ -1,7 +1,10 @@
+using Application.DependencyInjection;
 using BlazorWebApp.Components;
 using Infrastructure.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddApplicationService();
 
 builder.Services.AddInfrastructureSevice(builder.Configuration);
 
